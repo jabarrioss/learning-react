@@ -1,44 +1,18 @@
-import { useState } from "react";
+import { Component } from "react";
 
-function App() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+class App extends Component{
+  constructor(props){
+    super(props);
+    console.log("Constructor");
   }
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+  componentDidMount(){
+    console.log("Component did mount");
   }
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    let data = {email, password};
-    console.log(data);
-    console.log(`Email ${email}`);
-    console.log(`Password ${password}`);
+  render(){
+    return ( <div>Hola</div> );
   }
 
-  return (
-    <div className="App">
-      <form onSubmit={handleFormSubmit}>
-        <h1>Iniciar sesion</h1>
-        <br />
-        <label htmlFor="correo">
-          Correo
-          <input type="email" name="correo" id="correo" onChange={handleEmailChange} value={email}/>
-        </label>
-        <br />
-        <label htmlFor="password">
-          Password
-          <input type="password" name="password" id="password" onChange={handlePasswordChange} value={password}/>
-        </label>
-        <br />
-        <button type="submit">Hola cara de bola</button>
-      </form>
-    </div>
-  );
 }
-
 export default App;
