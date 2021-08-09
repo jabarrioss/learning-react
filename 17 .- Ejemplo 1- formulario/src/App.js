@@ -20,6 +20,15 @@ class App extends Component{
     console.log(this.state.name);
   }
 
+  shouldComponentUpdate(){
+    // This method returns a boolean to know if the component should update, duh
+    return true;
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState){
+    console.log(prevProps, prevState);
+  }
+
   render(){
     return ( <div>
       {/* 
